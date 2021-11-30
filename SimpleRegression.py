@@ -3,18 +3,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Data
+# Make Data
 x = np.linspace(0,4,15)
 sigma = 1
 error = np.random.normal(0, sigma, len(x))
-##print(error)
 y = 2 + 3*x + error
-
-##print(x, x.shape, type(x))
-##
-##y_hat = 2 + a*x
-##
-##def Q(error):
 
 
 def cov(x_, y_):
@@ -37,6 +30,7 @@ def var(x_):
     return s/(len(x_)-1)
 
 
+# Main
 a = cov(x,y)/var(x)
 b = mean(y) - 3*mean(x)     #a=3
 
